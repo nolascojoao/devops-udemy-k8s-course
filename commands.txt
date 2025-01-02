@@ -14,3 +14,5 @@ kubectl delete --all pods
 
 kubectl create -f my-pod.yaml
 kubectl apply -f my-pod.yaml
+
+kubectl get replicasets
