@@ -1,0 +1,16 @@
+minikube delete
+minikube start
+minikube stop
+minikube status
+
+kubectl get pods
+kubectl get pods --all-namespaces
+kubectl run my-pod-apache-server --image httpd
+kubectl get pods -o wide
+kubectl delete pods my-pod-apache-server
+kubectl run my-pod-2 --image httpd
+kubectl run my-pod-3 --image httpd
+kubectl delete --all pods
+
+kubectl create -f my-pod.yaml
+kubectl apply -f my-pod.yaml
