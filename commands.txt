@@ -16,3 +16,10 @@ kubectl create -f my-pod.yaml
 kubectl apply -f my-pod.yaml
 
 kubectl get replicasets
+kubectl delete --all pods && kubectl get pods
+kubectl apply -f my-replicaset.yaml && kubectl get pods
+kubectl scale replicasets frontend-rs --replica=5
+
+watch kubectl get pods
+kubectl scale replicasets frontend-rs --replicas=20 && watch kubectl get pods
+kubectl scale replicasets frontend-rs --replicas=1 && watch kubectl get pods
