@@ -23,3 +23,27 @@ kubectl scale replicasets frontend-rs --replica=5
 watch kubectl get pods
 kubectl scale replicasets frontend-rs --replicas=20 && watch kubectl get pods
 kubectl scale replicasets frontend-rs --replicas=1 && watch kubectl get pods
+
+kubectl get deployments
+kubectl rollout status deployment.apps/frontend-deployment
+kubectl describe deployment.apps/frontend-deployment
+
+kubectl get all
+
+kubectl rollout history deployment.apps/frontend-deployment
+kubectl rollout history deployment.apps/frontend-deployment --revision=2
+kubectl rollout history deployment.apps/frontend-deployment --revision=3
+kubectl rollout history deployment.apps/frontend-deployment --revision=5
+
+kubectl apply -f my-deployment.yaml --record
+
+kubectl rollout undo deployment.apps/frontend-deployment
+kubectl rollout undo deployment.apps/frontend-deployment --to-revision=5
+kubectl rollout history deployment.apps/frontend-deployment --revision=9
+kubectl rollout pause deployment.apps/frontend-deployment
+kubectl rollout resume deployment.apps/frontend-deployment
+
+kubectl scale deployment.apps/frontend-deployment --replicas=11
+kubectl scale deployment.apps/frontend-deployment --replicas=2
+
+kubectl describe deployment.apps/frontend-deployment | grep StrategyType
