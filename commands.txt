@@ -47,3 +47,10 @@ kubectl scale deployment.apps/frontend-deployment --replicas=11
 kubectl scale deployment.apps/frontend-deployment --replicas=2
 
 kubectl describe deployment.apps/frontend-deployment | grep StrategyType
+
+kubectl apply -f tomcat-pod.yaml
+kubectl apply -f redis-pod.yaml
+kubectl describe pods redis-pod | grep IP
+kubectl exec -it tomcat-pod -- bash
+apt install iputils-ping -y
+ping 172.17.0.4
