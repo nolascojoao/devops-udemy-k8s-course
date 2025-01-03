@@ -54,3 +54,14 @@ kubectl describe pods redis-pod | grep IP
 kubectl exec -it tomcat-pod -- bash
 apt install iputils-ping -y
 ping 172.17.0.4
+
+kubectl get namespaces
+kubectl get ns
+kubectl get pods -n kube-system
+kubectl create namespace frontend --save-config
+kubectl apply -f tomcat-pod.yaml --namespace=frontend
+kubectl get pods -n frontend
+kubectl config set-context --current --namespace=frontend
+kubectl config set-context --current --namespace=default
+kubectl delete namespace frontend
+kubectl delete ns backend-ns
