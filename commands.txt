@@ -70,3 +70,13 @@ kubectl get svc
 kubectl run -it debian-pod --image=debian bash
 apt update
 apt install curl -y
+kubectl get services --all-namespaces -o wide
+kubectl get services frontend-service --namespace=default -o wide
+
+kubectl delete services frontend-service --namespace=default
+kubectl delete all --all
+kubectl delete all --all --namespace=default
+kubectl get all --all-namespaces
+kubectl delete all --all --all-namespaces
+
+minikube service --url frontend-service-nodeport
