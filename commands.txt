@@ -80,3 +80,4 @@ kubectl get all --all-namespaces
 kubectl delete all --all --all-namespaces
 
 minikube service --url frontend-service-nodeport
+kubectl get nodes -o yaml | grep address
