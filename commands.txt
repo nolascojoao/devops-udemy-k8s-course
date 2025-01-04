@@ -65,3 +65,8 @@ kubectl config set-context --current --namespace=frontend
 kubectl config set-context --current --namespace=default
 kubectl delete namespace frontend
 kubectl delete ns backend-ns
+
+kubectl get svc
+kubectl run -it debian-pod --image=debian bash
+apt update
+apt install curl -y
