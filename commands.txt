@@ -92,3 +92,8 @@ kubectl describe pods liveness-pod && \
 sleep 30 & \
 kubectl describe pods liveness-pod && \
 kubectl get pods liveness-pod
+
+kubectl exec -it redis-pod -- /bin/bash
+install -y procps
+ps aux
+kill 1
