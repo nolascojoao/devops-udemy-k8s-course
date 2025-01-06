@@ -114,3 +114,12 @@ kubectl label nodes minikube-m03 disktype=ssd
 kubectl get nodes --show-labels | grep disktype
 
 kubectl delete -f specific-node-pod.yaml
+kubectl label nodes minikube-m03 disktype-
+kubectl label nodes minikube-m02 disktype=ssd
+
+minikube node delete minikube-m02
+minikube node delete minikube-m03
+
+kubectl get ds/my-daemonset -o go-template='{{.spec.updateStrategy.type}}{{"\n"}}' -n default
+get ds/my-daemonset -o go-template='{{.spec.updateStrategy.rollingUpdate.maxUnavailable}}{{"\n"}}' -n default
+
