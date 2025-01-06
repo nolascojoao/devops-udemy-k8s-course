@@ -112,3 +112,5 @@ kubectl delete ds my-daemonset --cascade=orphan
 kubectl get nodes --show-labels
 kubectl label nodes minikube-m03 disktype=ssd
 kubectl get nodes --show-labels | grep disktype
+
+kubectl delete -f specific-node-pod.yaml
