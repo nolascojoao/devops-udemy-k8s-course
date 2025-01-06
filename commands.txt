@@ -97,3 +97,18 @@ kubectl exec -it redis-pod -- /bin/bash
 install -y procps
 ps aux
 kill 1
+
+kubectl get nodes
+minikube node add
+
+kubectl get ds
+
+kubectl get pods -o wide --field-selector spec.nodeName=minikube
+kubectl get pods -o wide --field-selector spec.nodeName=minikube-m02
+kubectl get pods -o wide --field-selector spec.nodeName=minikube-m03
+kubectl delete ds my-daemonset && kubectl get pods
+kubectl delete ds my-daemonset --cascade=orphan
+
+kubectl get nodes --show-labels
+kubectl label nodes minikube-m03 disktype=ssd
+kubectl get nodes --show-labels | grep disktype
