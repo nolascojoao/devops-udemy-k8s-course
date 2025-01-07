@@ -35,3 +35,20 @@
 | 0 6 * * 1-5  | Executa às 6:00 de segunda a sexta-feira            |
 | 0 */15 * * * | Executa a cada 15 minutos                           |
 +--------------+-----------------------------------------------------+
+```
+
+```plaintext
++----------------------+-------------------------------------------------------------+
+|      Special String  |                Exemplo                 		     |
++----------------------+-------------------------------------------------------------+
+| @reboot              | Executa uma vez, no momento em que o sistema é inicializado |
+| @yearly              | Executa uma vez por ano, no 1º de janeiro às 00:00          |
+| @annually            | Executa uma vez por ano, no 1º de janeiro às 00:00          |
+| @monthly             | Executa uma vez por mês, no 1º de cada mês às 00:00         |
+| @weekly              | Executa uma vez por semana, no domingo às 00:00             |
+| @daily               | Executa uma vez por dia, à meia-noite                       |
+| @midnight            | Executa uma vez por dia, à meia-noite                       |
+| @hourly              | Executa uma vez por hora, no minuto 0 de cada hora          |
++----------------------+-------------------------------------------------------------+
+```
+
