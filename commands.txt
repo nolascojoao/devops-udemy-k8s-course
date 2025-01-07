@@ -123,3 +123,9 @@ minikube node delete minikube-m03
 kubectl get ds/my-daemonset -o go-template='{{.spec.updateStrategy.type}}{{"\n"}}' -n default
 get ds/my-daemonset -o go-template='{{.spec.updateStrategy.rollingUpdate.maxUnavailable}}{{"\n"}}' -n default
 
+kubectl get jobs
+kubectl describe job my-job
+kubectl logs my-job-2blsp
+kubectl delete jobs my-job
+
+kubectl describe job my-job | grep Completions
