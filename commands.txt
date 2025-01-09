@@ -135,3 +135,6 @@ kubectl apply -f my-job.yaml && kubectl get jobs --watch
 kubectl create cm my-cm \
  --from-file=my-app-file.txt \
  --from-literal=my-description=testing
+
+echo -n 'admin' | base64
+echo -n 'YWRtaW4=' | base64 --decode
