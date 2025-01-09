@@ -14,6 +14,7 @@ sudo apt update -y
 sudo apt install -y docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 sudo systemctl enable docker
+sudo usermod -aG docker admin
 echo "Docker instalado e configurado!" >> /var/log/user-data.log
 
 # Instala o kubectl
